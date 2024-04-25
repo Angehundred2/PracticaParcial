@@ -12,18 +12,18 @@
     <div class="container">
         <h1>BIENVENIDO</h1>
         <ul class="course-list">
-            <li class="course-item" onclick="toggleDescription('curso1')">Viaje1</li>
+            <li class="course-item" onclick="mostrarPasajeros()">Viaje1</li>
             <div id="curso1" class="description">
                 <h3></h3>
             </div>
-            <li class="course-item" onclick="toggleDescription('curso2')">Viaje2</li>
+            <li class="course-item" onclick="mostrarPasajeros()">Viaje2</li>
             <div id="curso2" class="description">
                 <h3></h3>
             </div>
         </ul>
         <button class="btn" onclick="cerrarSesion()">Cerrar Sesión</button>
     </div>
-
+    
     <script>
         function toggleDescription(courseId) {
             var description = document.getElementById(courseId);

@@ -98,6 +98,25 @@ if (idcompra) {
   }
 }
 
+function mostrarCompras() {
+  const container = document.getElementById('compras-container');
+  let html = '<h2>Compras</h2>';
+
+  compras.forEach(compra => {
+      html += `<div>
+                  <h3>ID de Compra: ${compra.id}</h3>
+                  <p>UUID: ${compra.uuid}</p>
+                  <p>Duración: ${compra.Duracion}</p>
+                  <p>Fecha: ${compra.Fecha}</p>
+                  <p>Origen: ${compra.Origen}</p>
+                  <p>Destino: ${compra.Destino}</p>
+                  <p>Conductor: ${compra.Conductor}</p>
+              </div>`;
+  });
+
+  container.innerHTML = html;
+}
+
 
 if (!localStorage.usuario) {
     Swal.fire({

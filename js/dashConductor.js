@@ -25,59 +25,25 @@ const pasajeros = [
     }
 ];
 
-const $misViajes = $("#misViajes");
-pasajeros.forEach((pasajero) => {
-    pasajero.viajes.forEach((viaje) => {
-        const link = "detalle_viaje.html?idviaje=" + viaje.id;
-        const template = `
-            <li class="collection-item avatar" data-id="${viaje.id}" data-uuid="${pasajero.uuid}">
-                <i class="material-icons circle red">directions_car</i>
-                <span class="title">${pasajero.nombre}</span>
-                <p>
-                    ${viaje.detalle}        
-                </p>
-                <p class="precio">
-                    ${viaje.costo}
-                </p>
-                <a href="${link}" class="waves-effect waves-light btn btnIcon">
-                    <i class="material-icons">local_taxi</i>
-                    Detalle del viaje
-                </a>
-            </li>
-        `;
-        $misViajes.append(template);
-    });
-});
+function mostrarPasajeros() {
+    const container = document.getElementById('pasajeros-container');
+    let html = '<h2>Pasajeros</h2>';
 
-const queryString = window.location.search;
-const params = new URLSearchParams(queryString);
-const idviaje = params.get("idviaje");
-let miViaje = {};
-if (idviaje) {
-    pasajeros.forEach((pasajero) => {
-        pasajero.viajes.forEach((viaje) => {
-            if (viaje.id === idviaje) {
-                const mytitle = "Detalle del viaje de " + pasajero.nombre;
-                $("#myTitle").html(mytitle);
-                miViaje = viaje;
-            }
+    pasajeros.forEach(pasajero => {
+        html += `<div>
+                    <h3>${pasajero.nombre}</h3>
+                    <p>UUID: ${pasajero.uuid}</p>
+                    <h4>Viajes:</h4>
+                    <ul>`;
+        pasajero.viajes.forEach(viaje => {
+            html += `<li>ID: ${viaje.id}, Destino: ${viaje.destino}, Costo: ${viaje.costo}</li>`;
         });
+        html += `   </ul>
+                </div>`;
     });
-    if (Object.keys(miViaje).length > 0) {
-        const template = `
-            <li class="collection-item">
-                <div id="texto">
-                    <p class="destino">Destino: ${miViaje.destino}</p>
-                    <p class="detalle">${miViaje.detalle}</p>
-                    <p class="costo">${miViaje.costo}</p>
-                </div>
-            </li>
-        `;
-        $("#miViaje").append(template);
-    }
+
+    container.innerHTML = html;
 }
-
-
 function cerrarSesion() {
     localStorage.removeItem('usuario');
     window.location.href = 'index.html';
