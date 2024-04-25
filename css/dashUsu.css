@@ -1,0 +1,65 @@
+        .html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            border: 1px solid #15161d;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        .profile {
+            margin-bottom: 20px;
+        }
+
+        .profile label {
+            font-weight: bold;
+        }
+
+        .survey {
+            margin-top: 20px;
+        }
+
+        .survey label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .survey input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        .btn {
+            display: block;
+            width: 100px;
+            margin: 20px auto;
+            padding: 10px;
+            text-align: center;
+            background-color: #e91616;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #b32a00;
+        }
+        .btnIcon i {
+            margin-right: 10px;
+        }
+        .btnIcon {
+            display: inline-flex;
+            align-items: center;
+            margin-top: 10px;
+        }

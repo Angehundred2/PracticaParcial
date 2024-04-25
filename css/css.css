@@ -1,0 +1,58 @@
+html, body {
+    height: 120%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #000000, #FFFFFF); 
+}
+
+.btnWitdh {
+    width: 100%;
+}
+
+.center-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.bienvenida {
+    text-align: center; 
+    border-radius: 10px;
+    padding: 10px; 
+    margin-top: 10px; 
+    white-space: nowrap;
+    margin-bottom: 10px; 
+    box-shadow: 0 2px 4px #fda603fd; 
+    font-family: 'Roboto', sans-serif; 
+}
+.card {
+    width: 80%; 
+}
+.card-title {
+    text-align: center;
+}
+.btnWitdh {
+    width: 100%;
+}
+.btnIcon i {
+    margin-right: 10px;
+}
+.btnIcon {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.collection .collection-item.avatar .title {
+    font-weight: 700;
+    font-size: 20px;
+    display: block;
+}
+.collection .collection-item.avatar p.precio {
+    color: #2bbbad;
+    font-weight: 700;
+    font-size: 25px;
+    margin-top: 10px;
+}
